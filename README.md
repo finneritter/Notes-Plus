@@ -91,7 +91,7 @@ All keybinds are configurable in the Notes+ settings screen (via Mod Menu) or in
 ## Building from Source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/igcalc.git
+git clone https://github.com/finneritter/Notes-Plus.git
 cd igcalc
 ./gradlew build
 ```
