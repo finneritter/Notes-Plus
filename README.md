@@ -1,4 +1,4 @@
- Notes+
+# Notes+
 
 A Fabric mod for Minecraft 1.21.11 that adds an in-game notes editor, calculator, and timer — all accessible as floating overlay windows without pausing the game.
 
@@ -22,24 +22,28 @@ A Fabric mod for Minecraft 1.21.11 that adds an in-game notes editor, calculator
 ### Calculator (F6)
 - Standard arithmetic with recursive-descent expression parser
 - Supports `+`, `-`, `*`, `/`, parentheses, decimals, and negative numbers
-- Calculation history (session-scoped, up to 50 entries)
+- Calculation history (per-world, up to 50 entries)
+- iOS-style clear: C clears expression, double-tap C (AC) clears all history
 - Send result to Notes with one click
 - Full keyboard and mouse input
 
 ### Timer (F8)
 - Countdown timer with digit-entry input and preset buttons
 - Stopwatch mode with lap times
+- Keyboard shortcuts: Space (start/pause), R (reset), L (lap), Tab (switch mode)
+- Global stopwatch toggle and reset keybinds — works without opening the timer
 - Sound notification on timer completion
-- Tab switching between Timer and Stopwatch modes
 
-### HUD Pinning (F9)
+### HUD Pinning
 - Pin Notes or Timer to the in-game HUD for always-visible display
 - Drag, resize, and adjust opacity in the HUD Configuration screen
-- Interact with pinned HUD elements by holding Alt
+- Toggle HUD visibility and interact with pinned elements via configurable keys
 - Scroll pinned notes with Ctrl+Up/Down
 
 ### Settings (Mod Menu)
-- Fully configurable keybinds for all actions
+- Fully configurable keybinds — multi-key combos in mod menu, single keys in Controls
+- Live keybind capture: press different combos to preview, click outside to confirm
+- Per-keybind restore-default button when changed
 - Color scheme customization with HSB color picker
 - HUD display toggles and background visibility
 - Right-click context menu item toggles
@@ -48,27 +52,41 @@ A Fabric mod for Minecraft 1.21.11 that adds an in-game notes editor, calculator
 
 ### Tutorial
 - 12-step interactive guided tour on first launch
-- Per-window help cards via [?] buttons with keybind reference
+- Per-window help cards via [?] buttons with context-aware keybind reference
 - Spotlight cutout and tooltip-based instruction
+- Tutorial text dynamically reflects custom keybinds
 
 ## Default Keybinds
+
+### Controls Tab (single-key, configurable in Minecraft Controls)
 
 | Key | Action |
 |-----|--------|
 | F6 | Open Calculator |
 | F7 | Open Notes |
 | F8 | Open Timer |
-| F9 | Toggle HUD pin |
-| Alt (hold) | Interact with pinned HUD |
+| F9 | Toggle HUD visibility |
+| Left Alt (hold) | Interact with pinned HUD |
+
+### Mod Menu (multi-key combos, configurable in Notes+ settings)
+
+| Key | Action |
+|-----|--------|
 | Ctrl+N | New Note |
 | Ctrl+Shift+N | Quick Note |
 | Ctrl+Shift+F | Find in Sidebar |
 | Ctrl+Shift+G | Insert Coordinates |
 | Ctrl+Shift+E | Export to Clipboard |
+| Ctrl+Shift+T | Stopwatch Start/Stop |
+| Ctrl+Shift+R | Stopwatch Reset |
+
+### In-app (not configurable)
+
+| Key | Action |
+|-----|--------|
 | Ctrl+S | Save |
 | Ctrl+A | Select All |
-
-All keybinds are configurable in the Notes+ settings screen (via Mod Menu) or in Minecraft's Controls menu.
+| Space / R / L / Tab | Timer/Stopwatch controls (when window open) |
 
 ## Requirements
 
@@ -91,7 +109,7 @@ All keybinds are configurable in the Notes+ settings screen (via Mod Menu) or in
 ## Building from Source
 
 ```bash
-git clone https://github.com/finneritter/Notes-Plus.git
+git clone https://github.com/YOUR_USERNAME/igcalc.git
 cd igcalc
 ./gradlew build
 ```
